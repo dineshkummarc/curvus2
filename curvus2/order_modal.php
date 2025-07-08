@@ -1,0 +1,66 @@
+
+<form method="POST">
+    <div id="add<?php echo $id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-header">
+        </div>
+        <div class="modal-body">
+            <!-- hidden -->
+            <input type="hidden" name="product_id" value="<?php echo $id; ?>">
+            <input type="hidden" name="member_id" value="<?php echo $ses_id; ?>">
+            <input type="hidden" name="price" value="<?php echo $row['price']; ?>">
+
+
+
+            <!-- end hidden -->
+            <div class="span2">
+                <img src="admin/<?php echo $row['location']; ?>" width="180" height="180" class="img-rounded">      
+            </div>
+            <div class="span3">
+                
+             <div class="alert alert-info">Thank You!!</div>
+                    
+                              <div class="alert alert-success"><p>Are you Sure?<br>Do you want to Reserve this Seats??</p></div>     
+                <div class="alert alert-danger"> <p>&nbsp;&nbsp;&nbsp;&nbsp;How Many would you like to Reserve:
+                 <center><input id="cnet" class="span1" max="<?php echo $total_qty; ?>" type="number" name="quantity" value="1" required></center>
+             <p><center> <span class="badge badge-warning"><?php echo $total_qty; ?></span>&nbsp;&nbsp;Available Seats</center> </p></div>
+             
+                    </div>
+
+                <br>
+                <button type="submit" name="order" class="btn btn-success"></i>&nbsp;Reserve</button>
+                <button class="btn" name="order" data-dismiss="modal" aria-hidden="true">&nbsp;Cancel</button>
+            
+                     </div>
+        </li>
+</form>
+<!-- picture modal -->
+<div id="<?php echo $id; ?>" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-header">
+    </div>
+    <div class="modal-body">
+
+        <div class="span2">
+
+            <img src="admin/<?php echo $row['location']; ?>" width="200" height="200" class="img-rounded">      
+        </div>
+        <div class="span3">
+        
+            <div class="alert alert-danger"> <p>&nbsp;&nbsp;&nbsp;&nbsp;Name:</p></div>
+            <div class="langah">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['name'] ?></div>
+
+            <br>
+            <div class="alert alert-danger"> <p>&nbsp;&nbsp;&nbsp;&nbsp;Price:</p></div>
+            <div class="langah">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $row['price'] ?></div>
+        </div>
+
+
+
+
+
+    </div>
+    <div class="modal-footer">
+        <button class="btn" data-dismiss="modal" aria-hidden="true"><i class="icon-remove"></i>&nbsp;Close</button>
+
+    </div>
+</div>
+<!-- end modal -->
